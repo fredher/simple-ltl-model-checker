@@ -1,3 +1,6 @@
+# This file is part of the Simple LTL model-checker project
+# see https://github.com/fredher/simple-ltl-model-checker
+
 #!/usr/bin/env python3
 import argparse
 import spot
