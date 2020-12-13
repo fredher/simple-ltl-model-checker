@@ -18,8 +18,8 @@ The script should be run as follows:
 ```
 
 where:
-- `model.dot` is a transition system specified using the [graphviz/dot file format](https://www.graphviz.org/doc/info/lang.html) (see below for details)
-- `formula` is an LTL formula specified using [Spot syntax for LTL formulas](https://spot.lrde.epita.fr/tl.pdf)
+- `model.dot` is a transition system specified using the [graphviz/dot file format](https://www.graphviz.org/doc/info/lang.html) (see below for details).
+- `formula` is an LTL formula specified using [Spot syntax for LTL formulas](https://spot.lrde.epita.fr/tl.pdf). The atomic propositions of the formula are the labels of the nodes in the transition system.
 - `--output prefix` is optional. If specified, the script will output three files: `prefix-kipke.dot` that contains the transition system (Kripke structure) as seen by Spot, `prefix-automaton.dot` that contains the automaton for the negation of `formula`, and `prefix-product.dot` that contains the product of the automaton and the transition system. The `dot` tool can be used to covert these three files to human-readable files.
 
 ## Input format
@@ -39,3 +39,5 @@ digraph foo {
 The example above defines transition system `foo` with three nodes and three edges. The nodes `n1` and `n3` are declared explicitely. The node `n2` is desclared implicitely.
 - the attribute `initial` is optional and can take any non-empty string value. There should be exactly one initial node in the transition system. In the example above, `n1` is the initial node of the transition system.
 - the attribute `labels` is optional and can take as value a non-empty comma-separated list of strings that specifies the set of atomic propositions that label the node. In the example above, `n` is labeled `a` and `b`, `n2` is not labeled, and `n3` is labeled `a`.
+
+The example above introduces two atomic propositions: `a` and `b`, that can appear as atomic formulas in LTL requirements to check on this transition system: `[]a`, `[](a -> <>b)`,...
