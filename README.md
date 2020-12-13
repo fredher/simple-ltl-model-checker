@@ -1,13 +1,13 @@
 # A simple LTL model checker for teachers and students
 
-We present a simple LTL model-checker built on top of the great tool [Spot](https://spot.lrde.epita.fr/). This model-checker is inefficient and it comes with strong limitations regarding its features. However, it allows to model-check LTL formulas against finite transition systems. Moreover, it can output intermediate products of the model-checking process: the transition system, the Büchi automaton encoding the negation of the LTL formula, the product of the two and counter-examples when the formula does not hold on the transition system.
+We present a simple LTL model-checker built on top of the great tool [Spot](https://spot.lrde.epita.fr/). Our model-checker is inefficient and comes with strong limitations regarding its features. Still, it allows to model-check LTL formulas against finite transition systems. Moreover, it can output intermediate products of the model-checking process: the transition system, the Büchi automaton encoding the negation of the LTL formula, the product of the transition system and the automaton, and counter-examples when the formula does not hold on the transition system. This is actually good for teaching LTL model-checking.
 
 ## Requirements
 
-The script `model-checker.py` is written in Python3 and requires the following softwares:
+The script `model-checker.py` is written in Python 3 and requires the following softwares:
 - [Spot](https://spot.lrde.epita.fr/) including its python bindings (please refer to [installation instructions](https://spot.lrde.epita.fr/install.html))
-- argparse
-- pygraphviz
+- [Graphviz](https://graphviz.org/) the graph visualization software (please refer to [installation instructions](https://graphviz.org/download/))
+- [pygraphviz](https://pygraphviz.github.io/) the Python binding for the graphviz library (installation with `pip`: [installation instructions](https://pypi.org/project/pygraphviz/))
 
 ## Usage
 
