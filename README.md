@@ -28,8 +28,8 @@ Transition systems are specified as graphviz/dot graphs with specific attributes
 
 ```dot
 digraph foo {
-  node n1 [initial="true", labels="a,b"];
-  node n3 [labels="a"];
+  n1 [initial="true", labels="a,b"];
+  n3 [labels="a"];
   n1 -> n2;
   n2 -> n3;
   n3 -> n2;

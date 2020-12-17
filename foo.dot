@@ -1,0 +1,7 @@
+digraph foo {
+  n1 [initial="true", labels="a,b"];
+  n3 [labels="a"];
+  n1 -> n2;
+  n2 -> n3;
+  n3 -> n2;
+}
