@@ -6,8 +6,7 @@
 import argparse
 import spot
 import sys
-from buddy import bdd_ithvar
-from buddy import bddtrue
+from buddy import bdd_ithvar, bddtrue
 import pygraphviz as pgv
 
 """ 
@@ -91,8 +90,7 @@ def dot_model_to_kripke(file, bdddict):
 def build_automaton(formula, bdddict):
     """ Build a Büchi automaton that accepts all words satisfying formula, using
 dictionary bdddict """
-    f = spot.formula(formula)
-    af = spot.translate(f, dict=bdddict)
+    af = spot.translate(formula, dict=bdddict)
     return af
 
 def model_check(k, formula, bdddict):
@@ -102,7 +100,7 @@ def model_check(k, formula, bdddict):
     neg_formula = "!(" + formula + ")"
     a_neg_formula = build_automaton(neg_formula, d)
     # Compute the product
-    product = spot.twa_product(k, a_neg_formula)
+    product = spot.otf_product(k, a_neg_formula)
     # Check emptiness of the product
     run = product.accepting_run()
     return (a_neg_formula, product, run)
